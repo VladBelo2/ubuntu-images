@@ -1,3 +1,7 @@
+% Ubuntu 24.04 DevOps Troubleshooting Lab
+% Created by Vlad Belo
+% July 2025
+
 # 🧪 Ubuntu DevOps Troubleshooting Lab Manual
 
 Welcome to the **Ubuntu 24.04 DevOps Lab Environment**. This lab simulates 6 real-world infrastructure and troubleshooting issues.
