@@ -1,0 +1,6 @@
+services:
+  tools:
+    image: vladbelo2/ubuntu-tools:latest
+    container_name: ubuntu-tools
+    stdin_open: true
+    tty: true
