@@ -18,4 +18,6 @@ RUN useradd -ms /bin/bash student \
     && chown -R student:student /lab
 
 # Start the troubleshooting lab setup
+USER student
+WORKDIR /home/student
 CMD ["/lab/start.sh"]

@@ -114,20 +114,25 @@ Error: Misconfigured - set APP_ENV=dev
 
 ### 🧠 Troubleshooting
 
-- Inspect DNS configuration:
+- Inspect `/etc/resolv.conf` (it might look okay)
 
   ```bash
   cat /etc/resolv.conf
   ```
 
-- It may be missing nameservers or commented out.
+- Then check for blocked DNS traffic:
+
+  ```bash
+  sudo iptables -L -n -v | grep dpt:53
+  ```
 
 ### ✅ Goal (Expected Fix)
 
-- Restore the original config:
+- Remove the iptables DNS block:
 
   ```bash
-  sudo mv /etc/resolv.conf.bak /etc/resolv.conf
+  sudo iptables -D OUTPUT -p udp --dport 53 -j REJECT
+  sudo iptables -D OUTPUT -p tcp --dport 53 -j REJECT
   ```
 
 - Re-test DNS resolution:
@@ -204,6 +209,7 @@ Error: Misconfigured - set APP_ENV=dev
   ```
 
 - Find UID-based rules rejecting non-root (UID ≠ 0).
+
 - Check your UID:
 
   ```bash
