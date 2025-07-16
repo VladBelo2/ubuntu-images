@@ -1,0 +1,13 @@
+.git
+.gitignore
+README.md
+*.sh
+*.md
+.vscode/
+.idea/
+*.log
+*.tar
+.DS_Store
+docker-compose.yml
+.github/
+Makefile

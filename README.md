@@ -1,3 +1,5 @@
+![Docker Build](https://github.com/vladbelo2/ubuntu-images/actions/workflows/docker.yml/badge.svg)
+
 # 🐧 Ubuntu Tools Image
 
 A lightweight Ubuntu 24.04 Docker image preloaded with essential diagnostic tools like `ping`, `curl`, `ip`, and more.
@@ -26,6 +28,7 @@ make push
 ```
 
 Or:
+
 ```bash
 ./build-push.sh
 ```
@@ -36,5 +39,4 @@ Or:
 
 ## 🛠 Maintainer
 
-Vlad Belo   
-
+Vlad Belo
