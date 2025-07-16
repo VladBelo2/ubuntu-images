@@ -16,8 +16,8 @@ A lightweight Ubuntu 24.04 Docker image preloaded with essential diagnostic tool
 ### Docker CLI
 
 ```bash
-docker pull vladbelo2/ubuntu-tools:latest
-docker run -it vladbelo2/ubuntu-tools
+docker pull vladbelo2/ubuntu-lab:latest
+docker run -it --rm --name ubuntu-lab --user student ubuntu-lab:local
 ```
 
 ## 🔨 Local Build

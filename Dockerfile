@@ -7,8 +7,15 @@ ENV DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update && apt-get install -y \
     curl wget iproute2 iputils-ping net-tools dnsutils lsb-release \
-    bash-completion vim less tmux htop \
+    bash-completion vim less tmux htop ufw openssh-server netcat-traditional \
+    systemd iputils-tracepath traceroute tcpdump \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
-CMD ["bash"]
+# Add lab files and create student user
+COPY lab/ /lab/
+RUN useradd -ms /bin/bash student \
+    && chown -R student:student /lab
+
+# Start the troubleshooting lab setup
+CMD ["/lab/start.sh"]

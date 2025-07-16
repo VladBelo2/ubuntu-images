@@ -34,6 +34,5 @@ jobs:
           push: true
           platforms: linux/amd64,linux/arm64
           tags: |
-            vladbelo2/ubuntu-tools:latest
-            vladbelo2/ubuntu-tools:${{ steps.meta.outputs.version }}
-
+            vladbelo2/ubuntu-lab:latest
+            vladbelo2/ubuntu-lab:${{ steps.meta.outputs.version }}

@@ -17,3 +17,5 @@ __pycache__/
 
 # Build scripts or artifacts
 *.bak
+selective_exporter.py
+structure_and_contents.txt

@@ -1,4 +1,4 @@
-IMAGE=vladbelo2/ubuntu-tools
+IMAGE=vladbelo2/ubuntu-lab
 TAG=latest
 
 build:

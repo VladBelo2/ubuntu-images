@@ -11,3 +11,5 @@ README.md
 docker-compose.yml
 .github/
 Makefile
+selective_exporter.py
+structure_and_contents.txt

@@ -1,0 +1,23 @@
+✅ Scenario 1 (Port Issue)
+- Port 8080 requires root permissions or has iptables rule
+- Solution: `iptables -D INPUT ...` or run app as student
+
+✅ Scenario 2 (Service Down)
+- Run `systemctl status fakeapp`
+- Then: `systemctl start fakeapp`
+
+✅ Scenario 3 (DNS Fail)
+- Check `/etc/resolv.conf` is empty
+- Restore: `mv /etc/resolv.conf.bak /etc/resolv.conf`
+
+✅ Scenario 4 (SSH blocked)
+- Check `ufw status`
+- Allow: `ufw allow ssh`
+
+✅ Scenario 5 (Firewall Rules)
+- Look for iptables UID-based rejection
+- Remove: `iptables -D INPUT ...`
+
+✅ Scenario 6 (Misconfigured App)
+- Investigate `/usr/local/bin/fakeapp`
+- Debug with `strace` or `cat`
