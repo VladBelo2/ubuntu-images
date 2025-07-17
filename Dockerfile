@@ -1,7 +1,10 @@
 FROM ubuntu:24.04
 
-LABEL maintainer="vladbelo2"
-LABEL description="Ubuntu 24.04 with networking & troubleshooting tools preinstalled"
+LABEL \
+    org.opencontainers.image.authors="Vlad Belo" \
+    org.opencontainers.image.title="Ubuntu Lab Image" \
+    org.opencontainers.image.description="Ubuntu 24.04 with troubleshooting tools" \
+    org.opencontainers.image.url="https://hub.docker.com/r/vladbelo2/ubuntu-lab"
 
 ENV DEBIAN_FRONTEND=noninteractive
 
