@@ -20,7 +20,7 @@ RUN apt-get install -y \
     sudo \
     curl wget iproute2 iputils-ping net-tools dnsutils lsb-release \
     bash-completion vim less tmux htop ufw openssh-server netcat-traditional \
-    systemd iputils-tracepath traceroute tcpdump \
+    systemd iputils-tracepath traceroute tcpdump openjdk-17-jdk \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
@@ -34,6 +34,12 @@ COPY lab/bashrc_append /tmp/bashrc_append
 RUN cat /tmp/bashrc_append >> /home/student/.bashrc \
     && chown student:student /home/student/.bashrc \
     && rm /tmp/bashrc_append
+
+# Install Jenkins and its dependencies    
+COPY scripts/jenkins_install.sh /tmp/
+RUN chmod +x /tmp/jenkins_install.sh && \
+    /tmp/jenkins_install.sh && \
+    rm /tmp/jenkins_install.sh
 
 # Start the troubleshooting lab setup
 USER student
